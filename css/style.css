@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap");
 
+:root {
+  --base-color: #8625d2;
+  --base-color-second: #996dff;
+  --body-color: #141414;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,10 +17,23 @@ a {
 }
 
 body {
-  background-color: #f2f2f2;
+  /*background-color: var(--body-color);*/
+  background: rgb(20, 20, 20);
+  background: linear-gradient(
+    123deg,
+    rgba(20, 20, 20, 1) 47%,
+    rgba(134, 37, 210, 1) 82%,
+    rgba(153, 109, 255, 1) 100%
+  );
   font-family: nunito, "sans-serif";
   max-width: 400px;
   margin: 0 auto;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+body img {
+  width: 300px;
 }
 
 header {
@@ -23,24 +42,36 @@ header {
   justify-content: space-around;
   width: 100%;
   height: 40vh;
-  background-image: url(../image/psi.png);
-  background-repeat: no-repeat;
-  background-size: 200px;
   padding: 0 2%;
   overflow: hidden;
 }
 
+header .svg {
+  width: 250px;
+}
+
 .logo {
   margin-top: 65px;
+  margin-left: 2rem;
   width: 250px;
   height: 90px;
+  opacity: 0;
+  display: none;
+}
+
+header h1 {
+  color: var(--base-color-second);
+}
+
+header h1 strong {
+  color: var(--base-color);
+  font-size: 3rem;
 }
 
 .perfil {
-  width: 130px;
-  height: 130px;
+  width: 125px;
+  height: 125px;
   border-radius: 50%;
-  box-shadow: 0 0 20px #08967e;
 }
 
 .cicle {
@@ -57,24 +88,47 @@ main {
   align-items: center;
   width: 100%;
   height: 60vh;
-  background-image: url(../image/arvore.png);
-  background-repeat: no-repeat;
-  background-size: cover;
   padding: 0 2%;
+  overflow: hidden;
 }
 
 .links {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+}
+
+.sombra {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  margin-left: 22rem;
+  margin-top: 10rem;
+  box-shadow: 2px 2px 3rem var(--base-color);
+  position: absolute;
+  overflow: hidden;
+}
+
+.sombra img {
+  margin-top: 1rem;
+  width: 250px;
+  height: 250px;
+}
+.links img {
+  width: 280px;
+  opacity: 0.4;
+  position: absolute;
+
+  z-index: 1;
 }
 
 .button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(211, 210, 210, 0.52);
+  background-color: transparent;
   border-radius: 1rem;
   margin-bottom: 8%;
   animation: aparecer 1s linear;
@@ -92,42 +146,35 @@ main {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #0cc1a7;
+  background-color: var(--base-color-second);
   margin-right: 5%;
 }
 
 .icon i {
-  transform: scale(1.5);
-  color: #07706f;
+  transform: scale(1.2);
+  color: var(var(--base-color));
 }
 
 .title {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  /*align-items: center;
+  justify-content: center;*/
   text-decoration: none;
   width: 220px;
   height: 40px;
   font-weight: bold;
   font-size: 1.2rem;
-  color: #08967e;
-  text-shadow: 0.2em 0.2em 0.2em #f2f2f2;
+  color: var(--base-color);
 }
 
 .redes-sociais {
   width: 100%;
   display: flex;
+  align-items: flex-end;
   justify-content: space-evenly;
 }
 .redes-sociais a i {
-  color: #07706f;
+  color: #ff4081;
+  box-shadow: 2px 2px 1rem var(--body-color);
   transform: scale(1.7);
-}
-
-.swal-modal {
-  transform: scale(0.8);
-}
-
-.swal-button {
-  background-color: #0cc1a7;
 }
