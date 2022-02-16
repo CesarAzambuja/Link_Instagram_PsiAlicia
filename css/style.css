@@ -16,6 +16,11 @@ a {
   text-decoration: none;
 }
 
+html {
+  width: 100vw;
+  height: 100vh;
+}
+
 body {
   /*background-color: var(--body-color);*/
   background: rgb(20, 20, 20);
@@ -25,8 +30,11 @@ body {
     rgba(134, 37, 210, 1) 82%,
     rgba(153, 109, 255, 1) 100%
   );
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: nunito, "sans-serif";
   max-width: 400px;
+  width: 100vw;
   margin: 0 auto;
   max-height: 100vh;
   overflow: hidden;
@@ -90,6 +98,7 @@ main {
   height: 60vh;
   padding: 0 2%;
   overflow: hidden;
+  position: relative;
 }
 
 .links {
